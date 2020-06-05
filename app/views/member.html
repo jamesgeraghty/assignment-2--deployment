@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'Member' /}
+
+#{menu id:"member"/}
+
+<section class="ui segment">
+    <h2 class="ui header">
+
+
+        <h3 class="ui header">
+            <a href="/trainerDashboard" class="ui icon button">
+                <i class="arrow alternate circle left outline small icon"></i>
+            </a>
+
+            </div>
+            <div class="ui four column stackable center aligned grid">
+            <div class="middle aligned row">
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="user circle outline icon"></i>
+                    ${member.name}
+                        <p> Age: ${member.age} </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="heart icon"></i>BMI</i>
+                    ${member.bmi}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="heart icon"></i>BMI</i>
+                    ${member.bmi}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui icon header">
+                        <i class="user md icon"></i>
+                    ${member.bmiresult}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h3>
+</section>
+
+<section class="ui segment">
+    <h2 class="ui header">
+
+    </h2>
+#{listassessments member: member /}
+#{addassessments member:member /}
+
+</section>
