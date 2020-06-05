@@ -48,6 +48,8 @@ public class Dashboard extends Controller {
     member.save();
     redirect ("/dashboard" );
   }
+
+  
   public static void addComment(String comment, Long id)
   {
     Logger.info("Adding a Comment");
