@@ -48,6 +48,7 @@ public class MemberCtrl extends Controller
         redirect("/trainerdashboard");
     }
     
+
     public static void addComment(String comment, Long id)
     {
         Logger.info("Adding a Comment");
