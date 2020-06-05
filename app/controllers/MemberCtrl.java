@@ -6,6 +6,8 @@ import models.Trainer;
 import play.mvc.Controller;
 import play.Logger;
 
+import java.util.List;
+
 public class MemberCtrl extends Controller
 {
     public static void index(Long id)
@@ -44,5 +46,17 @@ public class MemberCtrl extends Controller
         Trainer trainer = Accounts.getLoggedInTrainer();
         trainer.save();
         redirect("/trainerdashboard");
+    }
+    
+    public static void addComment(String comment, Long id)
+    {
+        Logger.info("Adding a Comment");
+        Assessment assessment = Assessment.findById(id);
+        assessment.comment = comment;
+        assessment.save();
+        Trainer trainer = Accounts.getLoggedInTrainer();
+        Member member = Member.findById(id);
+        List<Assessment> assessments = member.assessments;
+        render("trainerDashboard.html", trainer, member, assessments);
     }
 }

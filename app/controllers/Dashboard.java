@@ -48,6 +48,16 @@ public class Dashboard extends Controller {
     member.save();
     redirect ("/dashboard" );
   }
-
+  public static void addComment(String comment, Long id)
+  {
+    Logger.info("Adding a Comment");
+    Assessment assessment = Assessment.findById(id);
+    assessment.comment = comment;
+    assessment.save();
+    Trainer trainer = Accounts.getLoggedInTrainer();
+    Member member = Member.findById(id);
+    List<Assessment> assessmentlist = member.assessments;
+    render("trainermemberdashboard.html", trainer, member, assessmentlist);
+  }
 
 }
