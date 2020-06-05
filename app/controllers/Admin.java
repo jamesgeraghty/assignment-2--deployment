@@ -17,8 +17,8 @@ public class Admin extends Controller
         List<Trainer> members = Trainer.findAll();
         render ("dashboard.html",members);
     }
-    public static void addMembers(String name, int age, String email, String password, String address, String gender, double height, double weight, double bmi, String bmiresult) {
-        Member member = new Member(name, age, email, password, address, gender, height, weight, bmi, bmiresult);
+    public static void addMembers(String name, int age, String email, String password, String address, String gender, double height, double weight, double bmi, String bmiresult, double isIdealBodyWeight) {
+        Member member = new Member(name, age, email, password, address, gender, height, weight, bmi, bmiresult, isIdealBodyWeight);
         Logger.info("Adding a new member called " + name + "Age:" + age);
 
         member.save();

@@ -14,7 +14,7 @@ public class Dashboard extends Controller {
     Member member = Accounts.getLoggedInMember();
     member.getBMI();
     member.bmiAnalytics();
-    member.isIdealBodyWeight();
+    //member.isIdealBodyWeight();
     List<Assessment> assessments = member.assessments;
     render("dashboard.html", member,assessments);
   }
