@@ -1,3 +1,4 @@
+#{list items:_member.assessments, as: 'assessment'}
 <table class="ui fixed table">
     <thead>
     <tr>
@@ -7,6 +8,7 @@
         <th>Upper Arm</th>
         <th>Waist</th>
         <th>Hips</th>
+        <th>Comment</th>
     </tr>
     </thead>
     <tbody>
@@ -30,6 +32,9 @@
            <td>
             ${assessment.hips}
            </td>
+            td>
+            ${assessment.comment}
+            </td>
             <td>
             <a href="/members/${_member.id}/deleteassessment/${assessment.id}" class="ui tiny red button">Delete</a>
             </td>
@@ -37,3 +42,10 @@
      #{/list}
     </tbody>
 </table>
+<form class="ui form" action="/member/${member.id}/assessment/${assessment.id}" method="POST">
+    <div class="field">
+        <input placeholder="Comment" type="text" name="comment">
+    </div>
+    <button class="ui blue submit button">Update</button>
+</form>
+#{/list}
