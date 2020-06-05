@@ -32,9 +32,6 @@
            <td>
             ${assessment.hips}
            </td>
-            td>
-            ${assessment.comment}
-            </td>
             <td>
             <a href="/members/${_member.id}/deleteassessment/${assessment.id}" class="ui tiny red button">Delete</a>
             </td>
@@ -42,10 +39,3 @@
      #{/list}
     </tbody>
 </table>
-<form class="ui form" action="/member/${member.id}/assessment/${assessment.id}" method="POST">
-    <div class="field">
-        <input placeholder="Comment" type="text" name="comment">
-    </div>
-    <button class="ui blue submit button">Update</button>
-</form>
-#{/list}

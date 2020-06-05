@@ -49,8 +49,8 @@ public class Dashboard extends Controller {
     redirect ("/dashboard" );
   }
 
-  
-  public static void addComment(String comment, Long id)
+
+  public static void addComment(String comment, Long id, Long assessmentid)
   {
     Logger.info("Adding a Comment");
     Assessment assessment = Assessment.findById(id);

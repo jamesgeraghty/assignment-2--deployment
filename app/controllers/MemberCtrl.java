@@ -49,7 +49,7 @@ public class MemberCtrl extends Controller
     }
     
 
-    public static void addComment(String comment, Long id)
+    public static void addComment(String comment, Long id, Long assessmentid )
     {
         Logger.info("Adding a Comment");
         Assessment assessment = Assessment.findById(id);
