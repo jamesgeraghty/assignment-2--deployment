@@ -2,6 +2,7 @@ package controllers;
 
 import models.Member;
 import models.Assessment;
+import models.Trainer;
 import play.mvc.Controller;
 import play.Logger;
 
@@ -35,5 +36,13 @@ public class MemberCtrl extends Controller
         redirect ("/member/" + id);
     }
 
-
+    public static void deleteMember(Long id)
+    {
+        Member member = Member.findById(id);
+        Logger.info ("Removing" + member.name);
+        member.delete();
+        Trainer trainer = Accounts.getLoggedInTrainer();
+        trainer.save();
+        redirect("/trainerdashboard");
+    }
 }

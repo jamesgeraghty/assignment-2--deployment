@@ -17,10 +17,10 @@ GET     /about                                  About.index
 GET     /admin                                  Admin.index
 GET     /members/{id}                           MemberCtrl.index
 POST    /dashboard/                             Dashboard.addMembers
-GET     /trainerdashboard/deletemember/{id}     TrainerDashboard.deleteMember
+GET     /trainerdashboard/deletemember/{id}     MemberCtrl.deleteMember
 GET     /dashboard/deletemember/{id}            Dashboard.deleteMember
 POST    /dashboard/addassessments               Dashboard.addAssessments
-POST    /trainers/{id}/addcommentss             Dashboard.addComments
+POST    /trainers/{id}/addcomments              Dashboard.addComments
 
 GET     /members/{id}/deleteassessment/{assessmentid}     Dashboard.deleteAssessment
 
