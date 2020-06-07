@@ -47,17 +47,14 @@ public class MemberCtrl extends Controller
         trainer.save();
         redirect("/trainerdashboard");
     }
-    
 
-    public static void addComment(String comment, Long id, Long assessmentid )
-    {
-        Logger.info("Adding a Comment");
-        Assessment assessment = Assessment.findById(id);
-        assessment.comment = comment;
-        assessment.save();
-        Trainer trainer = Accounts.getLoggedInTrainer();
+
+    public static void addComment(Long id, Long assessmentid, String comment) {
         Member member = Member.findById(id);
-        List<Assessment> assessments = member.assessments;
-        render("trainerDashboard.html", trainer, member, assessments);
+        Assessment assessment = Assessment.findById(assessmentid);
+        assessment.setComment(comment);
+        assessment.save();
+        Logger.info("Adding a Comment" + comment);
+        render("member.html", member);
     }
 }

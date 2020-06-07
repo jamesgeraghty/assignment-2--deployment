@@ -48,6 +48,9 @@ public class Member extends Model {
 
     }
 
+    public Member(String name, int age, String email, String password, String gender, String address, double height, double weight) {
+    }
+
     public static Member findByEmail(String email) {
         return find("email", email).first();
     }

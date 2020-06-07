@@ -1,4 +1,4 @@
-#{list items:_member.assessments, as: 'assessment'}
+
 <table class="ui fixed table">
     <thead>
     <tr>
@@ -33,7 +33,12 @@
             ${assessment.hips}
            </td>
             <td>
-            <a href="/members/${_member.id}/deleteassessment/${assessment.id}" class="ui tiny red button">Delete</a>
+            ${assessment.comment}
+            </td>
+            <td>
+            <a href="/members/${_member.id}/deleteassessment/${assessment.id}" class="ui icon button">
+                <i class="icon trash"></i>
+            </a>
             </td>
         </tr>
      #{/list}

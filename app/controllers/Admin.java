@@ -14,16 +14,11 @@ public class Admin extends Controller
     public static void index() {
         Logger.info("Rendering Dashboard");
         Member trainer = Accounts.getLoggedInMember();
+        List<Assessment> assessment = Assessment.findAll();
         List<Trainer> members = Trainer.findAll();
         render ("dashboard.html",members);
     }
-    public static void addMembers(String name, int age, String email, String password, String address, String gender, double height, double weight, double bmi, String bmiresult, double isIdealBodyWeight) {
-        Member member = new Member(name, age, email, password, address, gender, height, weight, bmi, bmiresult, isIdealBodyWeight);
-        Logger.info("Adding a new member called " + name + "Age:" + age);
 
-        member.save();
-        redirect("/dashboard");
-    }
 
     public static void deleteMember(Long id) {
         Member member = Member.findById(id);
